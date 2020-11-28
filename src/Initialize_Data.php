@@ -25,9 +25,9 @@
 	$establishment_admin = "CREATE TABLE 
 		establishment_admin (
 		Admin_Id VARCHAR(7) NOT NULL, 
-		EAName VARCHAR(30) NOT NULL,
-		Phone VARCHAR(12),
-		EAEmail VARCHAR(30), 
+		EAName VARCHAR(50) NOT NULL,
+		Phone VARCHAR(20),
+		EAEmail VARCHAR(50), 
 		Est_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY(Admin_Id),
 		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id) );";
@@ -35,17 +35,17 @@
 	$establishment = "CREATE TABLE 
 		establishment (
 		Est_Id VARCHAR(7) NOT NULL, 
-		EName VARCHAR(30) NOT NULL, 
-		Address VARCHAR(30) NOT NULL,
+		EName VARCHAR(50) NOT NULL, 
+		Address VARCHAR(80) NOT NULL,
 		Waste_Pts INT, 
 		Type VARCHAR(30),
 		PRIMARY KEY(Est_Id)) ;";
 
 	$customer = "CREATE TABLE 
 		customer (Cust_Id VARCHAR(7) NOT NULL, 
-		CName VARCHAR(30) NOT NULL, 
+		CName VARCHAR(50) NOT NULL, 
 		Cust_Pts INT, 
-		CEmail VARCHAR(30) NOT NULL,
+		CEmail VARCHAR(50) NOT NULL,
 		Age INT,
 		
 		PRIMARY KEY(Cust_Id));";
@@ -58,21 +58,21 @@
 
 	$item = "CREATE TABLE 
 		reusable_item (
-		Item_Id INT NOT NULL, 
-		Category VARCHAR(12),
+		Item_Id VARCHAR(9) NOT NULL, 
+		Category VARCHAR(20),
 		Pt_Val INT, 
-		IName VARCHAR(30) NOT NULL,
+		IName VARCHAR(50) NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY(Item_Id),
 		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id) );";
 
 	$order = "CREATE TABLE 
 		orders (
-		Order_Id INT NOT NULL,
+		Order_Id VARCHAR(10) NOT NULL,
 		Pts INT,
 		Date DATE NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL,
-		Item_Id VARCHAR(30) , 
+		Item_Id VARCHAR(60), 
 		Est_Id VARCHAR(7) NOT NULL, 
 		
 		PRIMARY KEY(Order_Id),
