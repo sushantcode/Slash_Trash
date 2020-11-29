@@ -151,23 +151,21 @@
                     </ul>
                 </div><br /><br />
                 <div id="update">
-                    <h2>Update Points & Information:</h2>
+                    <h2>Update Data:</h2>
                     <ul style="list-style-type: none;">
                         <li style="margin-bottom: 10px;">
-                            <button id="update_cust_btn"> Update Customer Information</button>
+                            <button id="update_cust_btn"> Update Customer Points</button>
                             <div id="update_cust_popup" class="popup">
                                 <div class="popup_content">
                                     <span class="update_cust_close">
                                         &times;
                                     </span>
-                                    <form action="update_customer.php" method="post">
-                                        <label for="Cust_ID">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_ID" name="Cust_ID" /><br />
+                                    <form action="../src/controllers/update/update_customer.controller.php" method="post">
+                                        <label for="Cust_Id">Enter Customer ID: </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
                                         <label for="Cust_Pts">Enter Customer Pts: </label>
                                         <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br />
-                                        <label for="Cust_Email">Enter Customer Email: </label>
-                                        <input type="text" id="Cust_Email" name="Cust_Email" /><br />
-                                        <button type="submit">Update Customer Info</button>
+                                        <button type="submit">Update Customer Points</button>
                                     </form>
                                 </div>
                             </div>
@@ -267,14 +265,13 @@
                             <option value="Establishment">Establishment</option>
                             <option value="Order">Order</option>
                             <option value="Reusable_Item">Reusable_Item</option>
-                            <option value="visits">Visits</option>
                         </select><br /><br />
                         <button type="submit">Display Data</button>
                     </form>
                 </div><br /><br />
                 <div id="delete">
                     <h2>Delete Data from Table:</h2>
-                    <form action="delete_data.php" method="post">
+                    <form action="../src/controllers/delete/delete.controller.php" method="post">
                         <label for="table">Select Table:</label>
                         <select name="table" id="table">
                             <option value="Customer">Customer</option>
@@ -283,8 +280,8 @@
                             <option value="Order">Order</option>
                             <option value="Reusable_Item">Reusable_Item</option>
                         </select><br /><br />
-                        <label for="object_id">Enter ID: </label>
-                        <input type="text" id="object_id" name="object_id" /><br /><br />
+                        <label for="input_id">Enter ID: </label>
+                        <input type="text" id="input_id" name="input_id" /><br /><br />
                         <button type="submit">Delete</button>
                     </form>
                 </div>
