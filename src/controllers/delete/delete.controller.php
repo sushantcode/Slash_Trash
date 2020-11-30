@@ -19,28 +19,7 @@ else
     $table_id = "";
     $table = strtolower($table);
 
-    if($table == 'customer')
-    {
-        $table_id = "Cust_Id";
-    }
-    else if($table == 'establishment_admin')
-    {
-        $table_id = "Admin_Id";
-    }
-    else if($table == 'establishment')
-    {
-        $table_id = "Est_Id";
-    }
-    else if($table == 'order')
-    {
-        $table_id = "Order_Id";
-    }
-    else if($table == 'reusable_item')
-    {
-        $table_id = "Item_Id";
-    }
     
-    /*
     switch ($table) {
         case 'customer':
             $table_id = "Cust_Id";
@@ -57,31 +36,22 @@ else
         case 'reusable_item':
             $table_id = "Item_Id";
             break;
-        default:
-            echo "Invalid table type.";
-            die();
     }
-    */
+    
 
-    echo $table;
-    echo $table_id;
-    echo $input_id;
+    $query = "DELETE FROM $table
+        WHERE $table_id = '$input_id'";
+    echo "<br>".$query."<br>";
 
-    // DELETE FROM `customer` WHERE `customer`.`Cust_Id` = 'abc1234'
-    if($query = "DELETE FROM :table WHERE :table_id = :input_id")
-    {    
-        if($query==null)
-        {      
-            echo "Unable to delete due to violation.";      
-            die();    
-        }    
-        else
-        {
-            $stmt = $conn->prepare($query);  
-            $stmt->execute(array(':table' => $table, ':table_id' => $table_id, ':input_id' => $input_id));
-            $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
-            echo 'Record deleted successfully.';
-        }
+    if($conn->query($query))
+    {
+        echo "Deleted successfully";
     }
+    else
+    {
+        echo "Error:".$query."
+        ".$conn->error;
+    }
+
 }
 ?>

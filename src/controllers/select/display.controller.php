@@ -15,10 +15,13 @@ if(!$conn)
 else 
 {
     $table_name = filter_input(INPUT_POST, 'table');
+    echo $table_name."<br>";
 
-    if($query = "SELECT * FROM :table_name")
+    /*
+    if($query = "SELECT * FROM :table")
     {    
-        echo $table_name;
+        echo $table_name."<br>";
+        echo $query."<br>";
         if($query==null)
         {      
             echo "No Record Available";      
@@ -27,7 +30,7 @@ else
         else
         {
             $stmt = $conn->prepare($query);  
-            $stmt->execute(array(':table_name' => $table_name));
+            $stmt->execute([':table' => $table_name);
             $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
             if($rows == null)
             {
@@ -40,5 +43,26 @@ else
             }
         }
     }
-}
+    */
+
+    $stmt = $conn->query("SELECT * FROM $table_name");
+    //$stmt->execute([':table_name' => $table_name]);
+    $data = $stmt->fetchAll();
+    if($data != NULL)
+    {
+        foreach ($data as $row) {
+            //echo implode($row)."<br>";
+            echo "<br>";
+            foreach($row as $elem)
+            {
+                echo $elem."   ";
+            }
+    }
+    }
+    else
+    {
+        echo "No Records Available";
+                die(); 
+    }
+}    
 ?>
