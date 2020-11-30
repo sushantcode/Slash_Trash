@@ -252,14 +252,13 @@
                         </li>
                     </ul>
                 </div>
-                <img class="logo" src="Slash_Trash_Logo.png">
             </div>
             <div class="split right">
                 <div id="display">
                     <h2>Display Data:</h2>
-                    <form action="display_data.php" method="post">
+                    <form action="../src/controllers/select/display.controller.php" method="post">
                         <label for="table">Select Table:</label>
-                        <select name="table" id="table">
+                        <select id="table" name="table">
                             <option value="Customer">Customer</option>
                             <option value="Establishment_Admin">Establishment_Admin</option>
                             <option value="Establishment">Establishment</option>
@@ -285,6 +284,7 @@
                         <button type="submit">Delete</button>
                     </form>
                 </div>
+                <img class="logo" src="Slash_Trash_Logo.png">
             </div>
             <script src="slash_trash.js"></script>
         </div>

@@ -14,34 +14,61 @@ if(!$conn)
 }
 else 
 {
-    $Table_Name = filter_input(INPUT_POST, 'table');
+    $table = filter_input(INPUT_POST, 'table');
     $input_id = filter_input(INPUT_POST, 'input_id');
-    $Table_Id = "";
-    $Table_Name = strtolower($Table_Name);
-    switch ($Table_Name) {
+    $table_id = "";
+    $table = strtolower($table);
+
+    if($table == 'customer')
+    {
+        $table_id = "Cust_Id";
+    }
+    else if($table == 'establishment_admin')
+    {
+        $table_id = "Admin_Id";
+    }
+    else if($table == 'establishment')
+    {
+        $table_id = "Est_Id";
+    }
+    else if($table == 'order')
+    {
+        $table_id = "Order_Id";
+    }
+    else if($table == 'reusable_item')
+    {
+        $table_id = "Item_Id";
+    }
+    
+    /*
+    switch ($table) {
         case 'customer':
-            $Table_Id = "Cust_Id";
+            $table_id = "Cust_Id";
             break;
         case 'establishment_admin':
-            $Table_Id = "Admin_Id";
+            $table_id = "Admin_Id";
             break;
         case 'establishment':
-            $Table_Id = "Est_Id";
+            $table_id = "Est_Id";
             break;   
         case 'order':
-            $Table_Id = "Order_Id";
+            $table_id = "Order_Id";
             break;
         case 'reusable_item':
-            $Table_Id = "Item_Id";
+            $table_id = "Item_Id";
             break;
+        default:
+            echo "Invalid table type.";
+            die();
     }
+    */
 
-    echo $Table_Name;
-    echo $Table_Id;
+    echo $table;
+    echo $table_id;
     echo $input_id;
 
     // DELETE FROM `customer` WHERE `customer`.`Cust_Id` = 'abc1234'
-    if($query = "DELETE FROM :Table_Name WHERE :Table_Id = :input_id")
+    if($query = "DELETE FROM :table WHERE :table_id = :input_id")
     {    
         if($query==null)
         {      
@@ -51,7 +78,7 @@ else
         else
         {
             $stmt = $conn->prepare($query);  
-            $stmt->execute(array(':Table_Name' => $Table_Name, ':Table_Id' => $Table_Id, ':input_id' => $input_id));
+            $stmt->execute(array(':table' => $table, ':table_id' => $table_id, ':input_id' => $input_id));
             $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
             echo 'Record deleted successfully.';
         }

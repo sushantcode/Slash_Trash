@@ -18,21 +18,22 @@ h1 {
   }
 
   .logo {
-      display: flex;
-      justify-content: left;
+      border-left-width: 10px;
+      float: right;
+      padding-top: 175px;
   }
 
   .left {
     text-align: center;
     left: 0;
-    background-color: tan;
+    background-color: #ACDF87;
     color: darkslategray;
   }
   
   .right {
-    right: 0;
     text-align: center;
-    background-color: #ACDF87;
+    right: 0;
+    background-color: tan;
     color: darkslategray;
   }
 
