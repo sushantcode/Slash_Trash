@@ -72,7 +72,7 @@
 		Pts INT,
 		Date DATE NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL,
-		Item_Id VARCHAR(60), 
+		Item_Id VARCHAR(9), 
 		Est_Id VARCHAR(7) NOT NULL,
 		PRIMARY KEY(Order_Id, Est_Id, Cust_Id),
 		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id),
