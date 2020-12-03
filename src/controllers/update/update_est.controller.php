@@ -14,6 +14,8 @@
     }
     else 
     {
+        // Change to Establishment values
+        /*
         $Cust_Id = filter_input(INPUT_POST, 'Cust_Id');
         $Cust_Pts = filter_input(INPUT_POST, 'Cust_Pts');
 
@@ -32,5 +34,6 @@
                 echo 'Record updated successfully.';
             }
         }
+        */
     }
 ?>

@@ -14,10 +14,12 @@
     }
     else 
     {
+        // Change to Order values
+        /*
         $Cust_Id = filter_input(INPUT_POST, 'Cust_Id');
         $Cust_Pts = filter_input(INPUT_POST, 'Cust_Pts');
 
-        if($query = "UPDATE customer SET Cust_Pts = :Cust_Pts WHERE Cust_Id = :Cust_Id")
+        if($query = "UPDATE orders SET Cust_Pts = :Cust_Pts WHERE Cust_Id = :Cust_Id")
         {    
             if($query==null)
             {      
@@ -32,5 +34,6 @@
                 echo 'Record updated successfully.';
             }
         }
+        */
     }
 ?>
