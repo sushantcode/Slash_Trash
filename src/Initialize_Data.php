@@ -20,29 +20,29 @@
 
 	$conn = null;
 
-	//create tables:
+    //create tables:
+    
+    $establishment = "CREATE TABLE 
+		Establishment (
+		Est_Id VARCHAR(7) NOT NULL, 
+		EName VARCHAR(50) NOT NULL, 
+		Address VARCHAR(80) NOT NULL,
+		Waste_Pts INT, 
+		Type VARCHAR(30),
+		PRIMARY KEY(Est_Id));";
 
 	$establishment_admin = "CREATE TABLE 
-		establishment_admin (
+		Establishment_Admin (
 		Admin_Id VARCHAR(7) NOT NULL, 
 		EAName VARCHAR(50) NOT NULL,
 		Phone VARCHAR(20),
 		EAEmail VARCHAR(50), 
 		Est_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY(Admin_Id, Est_Id),
-		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id) );";
-
-	$establishment = "CREATE TABLE 
-		establishment (
-		Est_Id VARCHAR(7) NOT NULL, 
-		EName VARCHAR(50) NOT NULL, 
-		Address VARCHAR(80) NOT NULL,
-		Waste_Pts INT, 
-		Type VARCHAR(30),
-		PRIMARY KEY(Est_Id)) ;";
+		FOREIGN KEY (Est_Id) REFERENCES Establishment(Est_Id) );";
 
 	$customer = "CREATE TABLE 
-		customer (Cust_Id VARCHAR(7) NOT NULL, 
+		Customer (Cust_Id VARCHAR(7) NOT NULL, 
 		CName VARCHAR(50) NOT NULL, 
 		Cust_Pts INT, 
 		CEmail VARCHAR(50) NOT NULL,
@@ -53,39 +53,38 @@
 		visits (Est_Id VARCHAR(7) NOT NULL, 
 		Cust_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY (Est_Id, Cust_Id), 
-		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id), 
-		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id));";
+		FOREIGN KEY (Est_Id) REFERENCES Establishment(Est_Id), 
+		FOREIGN KEY (Cust_Id) REFERENCES Customer(Cust_Id));";
 
 	$item = "CREATE TABLE 
-		reusable_item (
+		Reusable_Item (
 		Item_Id VARCHAR(9) NOT NULL, 
 		Category VARCHAR(20),
 		Pt_Val INT, 
 		IName VARCHAR(50) NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY(Item_Id, Cust_Id),
-		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id) );";
+		FOREIGN KEY (Cust_Id) REFERENCES Customer(Cust_Id) );";
 
 	$order = "CREATE TABLE 
-		orders (
+		Orders (
 		Order_Id VARCHAR(10) NOT NULL,
 		Pts INT,
-		Date DATE NOT NULL,
+		Trans_Date DATE NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL,
 		Item_Id VARCHAR(9), 
 		Est_Id VARCHAR(7) NOT NULL,
 		PRIMARY KEY(Order_Id, Est_Id, Cust_Id),
-		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id),
-		FOREIGN KEY (Item_Id) REFERENCES establishment(Item_Id),
-		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id) );";
+		FOREIGN KEY (Est_Id) REFERENCES Establishment(Est_Id),
+		FOREIGN KEY (Cust_Id) REFERENCES Customer(Cust_Id) );";
 
-	$sql = $establishment.'
-		'.$establishment_admin.'
-		'.$customer.'
-		'.$visits.'
-		'.$item.'
-		'.$order;
-	//echo '<br>'.$sql.'<br>';
+    $sql = $establishment;
+    $sql .= $establishment_admin;
+    $sql .= $customer;
+    $sql .= $visits;
+    $sql .= $item;
+    $sql .= $order;
+	//echo $sql;
 	
 	$dbname = "SLASHTRASH";
 
