@@ -3,14 +3,27 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="slash_trash.css">
-        <title> SLASH_TRASH </title>
+        <title> Welcome to Slash-Trash! </title>
     </head>
     <body>
         <div id="main-container">
             <div id="Heading">
-                <h1><b><u>SLASH TRASH</u></b></h1>
+                <h1><b>SLASH-TRASH</b></h1>
             </div>
             <div class="split left">
+                <ul style="list-style-type: none;">
+                    <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="about_btn">
+                        ABOUT US 
+                    </button>
+                    <div id="about_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="about_close">
+                                &times;
+                            </span>
+                            !!! ADD ABOUT US INFO HERE !!!
+                        </div>
+                    </div>
+                </ul>
                 <div id="insert">
                     <h2>Adding New Data:</h2>
                     <ul style="list-style-type: none;">
@@ -44,17 +57,17 @@
                                     <span class="EA_close">
                                         &times;
                                     </span>
-                                    <form action="insert_est_admin.php" method="post">
-                                        <label for="Admin_ID">Enter Admin ID: </label>
-                                        <input type="text" id="Admin_ID" name="Admin_ID" /><br />
-                                        <label for="Admin_Name">Enter Admin Name: </label>
-                                        <input type="text" id="Admin_Name" name="Admin_Name" /><br />
-                                        <label for="Admin_Phone">Enter Admin Phone Number: </label>
-                                        <input type="text" id="Admin_Phone" name="Admin_Phone" /><br />
-                                        <label for="Admin_Email">Enter Admin Email: </label>
-                                        <input type="text" id="Admin_Email" name="Admin_Email" /><br />
-                                        <label for="Est_ID">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_ID" name="Est_ID" /><br />
+                                    <form action="../src/controllers/insert/insert_estAdmin.controller.php" method="post">
+                                        <label for="Admin_Id">Enter Admin ID: </label>
+                                        <input type="text" id="Admin_Id" name="Admin_Id" /><br />
+                                        <label for="EAName">Enter Admin Name: </label>
+                                        <input type="text" id="EAName" name="EAName" /><br />
+                                        <label for="Phone">Enter Admin Phone Number: </label>
+                                        <input type="text" id="Phone" name="Phone" /><br />
+                                        <label for="EAEmail">Enter Admin Email: </label>
+                                        <input type="text" id="EAEmail" name="EAEmail" /><br />
+                                        <label for="Est_Id">Enter Establishment ID: </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
                                         <button type="submit">ADD New Admin</button>
                                     </form>
                                 </div>
@@ -67,17 +80,17 @@
                                     <span class="Est_close">
                                         &times;
                                     </span>
-                                    <form action="insert_establishment.php" method="post">
-                                        <label for="Est_ID">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_ID" name="Est_ID" /><br />
+                                    <form action="../src/controllers/insert/insert_est.controller.php" method="post">
+                                        <label for="Est_Id">Enter Establishment ID: </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
                                         <label for="EName">Enter Establishment Name: </label>
                                         <input type="text" id="EName" name="EName" /><br />
-                                        <label for="EAddress">Enter Establishment Address: </label>
-                                        <input type="text" id="EAddress" name="EAddress" /><br />
+                                        <label for="Address">Enter Establishment Address: </label>
+                                        <input type="text" id="Address" name="Address" /><br />
                                         <label for="Waste_Pts">Enter Waste Pts: </label>
                                         <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br />
-                                        <label for="EType">Enter Establishment Type: </label>
-                                        <input type="text" id="EType" name="EType" /><br />
+                                        <label for="Type">Enter Establishment Type: </label>
+                                        <input type="text" id="Type" name="Type" /><br />
                                         <button type="submit">ADD New Establishment</button>
                                     </form>
                                 </div>
@@ -90,19 +103,19 @@
                                     <span class="order_close">
                                         &times;
                                     </span>
-                                    <form action="insert_order.php" method="post">
-                                        <label for="Order_ID">Enter Order ID: </label>
-                                        <input type="text" id="Order_ID" name="Order_ID" /><br />
+                                    <form action="../src/controllers/insert/insert_order.controller.php" method="post">
+                                        <label for="Order_Id">Enter Order ID: </label>
+                                        <input type="text" id="Order_Id" name="Order_Id" /><br />
                                         <label for="Pts">Enter Points: </label>
                                         <input type="number" id="Pts" name="Pts" /><br />
-                                        <label for="date">Select Date: </label>
-                                        <input type="date" id="date" name="date" /><br />
-                                        <label for="Cust_ID">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_ID" name="Cust_ID" /><br />
-                                        <label for="Item_ID">Enter Item ID: </label>
-                                        <input type="text" id="Item_ID" name="Item_ID" /><br />
-                                        <label for="Est_ID">Enter Establishment ID: </label>
-                                        <input type="number" id="Est_ID" name="Est_ID" /><br />
+                                        <label for="Date">Select Date: </label>
+                                        <input type="date" id="Date" name="Date" /><br />
+                                        <label for="Cust_Id">Enter Customer ID: </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
+                                        <label for="Item_Id">Enter Item ID: </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
+                                        <label for="Est_Id">Enter Establishment ID: </label>
+                                        <input type="number" id="Est_Id" name="Est_Id" /><br />
                                         <button type="submit">ADD New Order</button>
                                     </form>
                                 </div>
@@ -115,17 +128,17 @@
                                     <span class="item_close">
                                         &times;
                                     </span>
-                                    <form action="insert_item.php" method="post">
-                                        <label for="Item_ID">Enter Item ID: </label>
-                                        <input type="text" id="Item_ID" name="Item_ID" /><br />
+                                    <form action="../src/controllers/insert/insert_item.controller.php" method="post">
+                                        <label for="Item_Id">Enter Item ID: </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
                                         <label for="Category">Enter Category: </label>
                                         <input type="text" id="Category" name="Category" /><br />
-                                        <label for="Pts-Val">Enter Points Value: </label>
-                                        <input type="number" id="Pts-Val" name="Pts-Val" /><br />
-                                        <label for="Item_Name">Enter Item Name: </label>
-                                        <input type="text" id="Item_Name" name="Item_Name" /><br />
-                                        <label for="Cust_ID">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_ID" name="Cust_ID"/><br />
+                                        <label for="Pt_Val">Enter Points Value: </label>
+                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br />
+                                        <label for="IName">Enter Item Name: </label>
+                                        <input type="text" id="IName" name="IName" /><br />
+                                        <label for="Cust_Id">Enter Customer ID: </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id"/><br />
                                         <button type="submit">ADD New Item</button>
                                     </form>
                                 </div>
@@ -138,11 +151,11 @@
                                     <span class="visit_close">
                                         &times;
                                     </span>
-                                    <form action="insert_order.php" method="post">
-                                        <label for="Est_ID">Enter Establishment ID: </label>
-                                        <input type="number" id="Est_ID" name="Est_ID" /><br />
-                                        <label for="Cust_ID">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_ID" name="Cust_ID" /><br />
+                                    <form action="../src/controllers/insert/insert_visits.controller.php" method="post">
+                                        <label for="Est_Id">Enter Establishment ID: </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
+                                        <label for="Cust_Id">Enter Customer ID: </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
                                         <button type="submit">ADD New Order</button>
                                     </form>
                                 </div>
@@ -177,13 +190,13 @@
                                     <span class="update_EA_close">
                                         &times;
                                     </span>
-                                    <form action="update_est_admin.php" method="post">
-                                        <label for="Admin_ID">Enter Admin ID: </label>
-                                        <input type="text" id="Admin_ID" name="Admin_ID" /><br />
-                                        <label for="Admin_Phone">Enter Admin Phone Number: </label>
-                                        <input type="text" id="Admin_Phone" name="Admin_Phone" /><br />
-                                        <label for="Admin_Email">Enter Admin Email: </label>
-                                        <input type="text" id="Admin_Email" name="Admin_Email" /><br />
+                                    <form action="../src/controllers/update/update_estAdmin.controller.php" method="post">
+                                        <label for="Admin_Id">Enter Admin ID: </label>
+                                        <input type="text" id="Admin_Id" name="Admin_Id" /><br />
+                                        <label for="Phone">Enter Admin Phone Number: </label>
+                                        <input type="text" id="Phone" name="Phone" /><br />
+                                        <label for="EAEmail">Enter Admin Email: </label>
+                                        <input type="text" id="EAEmail" name="EAEmail" /><br />
                                         <button type="submit">Update Admin Info</button>
                                     </form>
                                 </div>
@@ -196,11 +209,11 @@
                                     <span class="update_Est_close">
                                         &times;
                                     </span>
-                                    <form action="update_establishment.php" method="post">
-                                        <label for="Est_ID">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_ID" name="Est_ID" /><br />
-                                        <label for="EAddress">Enter Establishment Address: </label>
-                                        <input type="text" id="EAddress" name="EAddress" /><br />
+                                    <form action="../src/controllers/update/update_est.controller.php" method="post">
+                                        <label for="Est_Id">Enter Establishment ID: </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
+                                        <label for="Address">Enter Establishment Address: </label>
+                                        <input type="text" id="Address" name="Address" /><br />
                                         <label for="Waste_Pts">Enter Waste Pts: </label>
                                         <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br />
                                         <button type="submit">Update Establishment Info</button>
@@ -215,19 +228,13 @@
                                     <span class="update_order_close">
                                         &times;
                                     </span>
-                                    <form action="update_order.php" method="post">
-                                        <label for="Order_ID">Enter Order ID: </label>
-                                        <input type="text" id="Order_ID" name="Order_ID" /><br />
+                                    <form action="../src/controllers/update/update_order.controller.php" method="post">
+                                        <label for="Order_Id">Enter Order ID: </label>
+                                        <input type="text" id="Order_Id" name="Order_Id" /><br />
                                         <label for="Pts">Enter Points: </label>
                                         <input type="number" id="Pts" name="Pts" /><br />
-                                        <label for="date">Select Date: </label>
-                                        <input type="date" id="date" name="date" /><br />
-                                        <label for="Cust_ID">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_ID" name="Cust_ID" /><br />
-                                        <label for="Item_ID">Enter Item ID: </label>
-                                        <input type="text" id="Item_ID" name="Item_ID" /><br />
-                                        <label for="Est_ID">Enter Establishment ID: </label>
-                                        <input type="number" id="Est_ID" name="Est_ID" /><br />
+                                        <label for="Item_Id">Enter Item ID: </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
                                         <button type="submit">Update Order</button>
                                     </form>
                                 </div>
@@ -240,11 +247,11 @@
                                     <span class="update_item_close">
                                         &times;
                                     </span>
-                                    <form action="update_item.php" method="post">
-                                        <label for="Item_ID">Enter Item ID: </label>
-                                        <input type="text" id="Item_ID" name="Item_ID" /><br />
-                                        <label for="Pts-Val">Enter Points Value: </label>
-                                        <input type="number" id="Pts-Val" name="Pts-Val" /><br />
+                                    <form action="../src/controllers/update/update_item.controller.php" method="post">
+                                        <label for="Item_Id">Enter Item ID: </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
+                                        <label for="Pt_Val">Enter Points Value: </label>
+                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br />
                                         <button type="submit">Update Item Info</button>
                                     </form>
                                 </div>
@@ -254,29 +261,43 @@
                 </div>
             </div>
             <div class="split right">
+                <ul style="list-style-type: none;">
+                    <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="howto_btn"> 
+                        HOW TO USE SLASH-TRASH? 
+                    </button>
+                    <div id="howto_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="howto_close">
+                                &times;
+                            </span>
+                            !!! ADD HOW TO INFO HERE !!!
+                        </div>
+                    </div>
+                </ul>
                 <div id="display">
                     <h2>Display Data:</h2>
-                    <form action="../src/controllers/select/display.controller.php" method="post">
+                    <form action="./controllers/display_controller.php" method="post">
                         <label for="table">Select Table:</label>
                         <select id="table" name="table">
                             <option value="Customer">Customer</option>
                             <option value="Establishment_Admin">Establishment_Admin</option>
                             <option value="Establishment">Establishment</option>
-                            <option value="Order">Order</option>
+                            <option value="Orders">Orders</option>
                             <option value="Reusable_Item">Reusable_Item</option>
+                            <option value="visits">Visits</option>
                         </select><br /><br />
                         <button type="submit">Display Data</button>
                     </form>
                 </div><br /><br />
                 <div id="delete">
                     <h2>Delete Data from Table:</h2>
-                    <form action="../src/controllers/delete/delete.controller.php" method="post">
+                    <form action="../src/controllers/delete.controller.php" method="post">
                         <label for="table">Select Table:</label>
                         <select name="table" id="table">
                             <option value="Customer">Customer</option>
                             <option value="Establishment_Admin">Establishment_Admin</option>
                             <option value="Establishment">Establishment</option>
-                            <option value="Order">Order</option>
+                            <option value="Orders">Orders</option>
                             <option value="Reusable_Item">Reusable_Item</option>
                         </select><br /><br />
                         <label for="input_id">Enter ID: </label>
