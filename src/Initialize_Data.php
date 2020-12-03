@@ -29,7 +29,7 @@
 		Phone VARCHAR(20),
 		EAEmail VARCHAR(50), 
 		Est_Id VARCHAR(7) NOT NULL, 
-		PRIMARY KEY(Admin_Id),
+		PRIMARY KEY(Admin_Id, Est_Id),
 		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id) );";
 
 	$establishment = "CREATE TABLE 
@@ -47,12 +47,12 @@
 		Cust_Pts INT, 
 		CEmail VARCHAR(50) NOT NULL,
 		Age INT,
-		
 		PRIMARY KEY(Cust_Id));";
 
 	$visits = "CREATE TABLE 
 		visits (Est_Id VARCHAR(7) NOT NULL, 
 		Cust_Id VARCHAR(7) NOT NULL, 
+		PRIMARY KEY (Est_Id, Cust_Id), 
 		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id), 
 		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id));";
 
@@ -63,7 +63,7 @@
 		Pt_Val INT, 
 		IName VARCHAR(50) NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL, 
-		PRIMARY KEY(Item_Id),
+		PRIMARY KEY(Item_Id, Cust_Id),
 		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id) );";
 
 	$order = "CREATE TABLE 
@@ -72,10 +72,9 @@
 		Pts INT,
 		Date DATE NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL,
-		Item_Id VARCHAR(60), 
-		Est_Id VARCHAR(7) NOT NULL, 
-		
-		PRIMARY KEY(Order_Id),
+		Item_Id VARCHAR(9), 
+		Est_Id VARCHAR(7) NOT NULL,
+		PRIMARY KEY(Order_Id, Est_Id, Cust_Id),
 		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id),
 		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id) );";
 
