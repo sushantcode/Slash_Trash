@@ -14,6 +14,8 @@
     }
     else 
     {
+        // Change to Reusable Item values
+        /*
         $Cust_Id = filter_input(INPUT_POST, 'Cust_Id');
         $Cust_Pts = filter_input(INPUT_POST, 'Cust_Pts');
 
@@ -33,11 +35,11 @@
                     echo 'Record updated successfully.';
                 else
                 {
-                    echo implode("|",$rows);
                     echo "Unable to update due to violation. Please check your input and the table."; 
                 }
             }
         }
+        */
     }
     echo '<p><a href="javascript:history.go(-1)" title="return">&laquo; Return to Slash-Trash Homepage</a></p>';    
 ?>

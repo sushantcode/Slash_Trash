@@ -35,16 +35,16 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/insert/insert_customer.controller.php" method="post">
-                                        <label for="Cust_Id">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
-                                        <label for="CName">Enter Customer Name: </label>
-                                        <input type="text" id="CName" name="CName" /><br />
-                                        <label for="Cust_Pts">Enter Customer Pts: </label>
-                                        <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br />
-                                        <label for="CEmail">Enter Customer Email: </label>
-                                        <input type="text" id="CEmail" name="CEmail" /><br />
-                                        <label for="Age">Enter Customer Age (In Years): </label>
-                                        <input type="number" id="Age" name="Age" /><br />
+                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                        <label for="CName">Enter Customer Name <mark>*</mark> : </label>
+                                        <input type="text" id="CName" name="CName" required /><br /><br />
+                                        <label for="Cust_Pts">Enter Customer Pts : </label>
+                                        <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br /><br />
+                                        <label for="CEmail">Enter Customer Email <mark>*</mark> : </label>
+                                        <input type="text" id="CEmail" name="CEmail" required /><br /><br />
+                                        <label for="Age">Enter Customer Age (In Years) : </label>
+                                        <input type="number" id="Age" name="Age" /><br /><br />
                                         <button type="submit">ADD New Customer</button>
                                     </form>
                                 </div>
@@ -58,16 +58,16 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/insert/insert_estAdmin.controller.php" method="post">
-                                        <label for="Admin_Id">Enter Admin ID: </label>
-                                        <input type="text" id="Admin_Id" name="Admin_Id" /><br />
-                                        <label for="EAName">Enter Admin Name: </label>
-                                        <input type="text" id="EAName" name="EAName" /><br />
-                                        <label for="Phone">Enter Admin Phone Number: </label>
-                                        <input type="text" id="Phone" name="Phone" /><br />
-                                        <label for="EAEmail">Enter Admin Email: </label>
-                                        <input type="text" id="EAEmail" name="EAEmail" /><br />
-                                        <label for="Est_Id">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
+                                        <label for="Admin_Id">Enter Admin ID <mark>*</mark> : </label>
+                                        <input type="text" id="Admin_Id" name="Admin_Id" required /><br /><br />
+                                        <label for="EAName">Enter Admin Name <mark>*</mark> : </label>
+                                        <input type="text" id="EAName" name="EAName" required /><br /><br />
+                                        <label for="Phone">Enter Admin Phone Number : </label>
+                                        <input type="text" id="Phone" name="Phone" /><br /><br />
+                                        <label for="EAEmail">Enter Admin Email : </label>
+                                        <input type="text" id="EAEmail" name="EAEmail" /><br /><br />
+                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
                                         <button type="submit">ADD New Admin</button>
                                     </form>
                                 </div>
@@ -81,16 +81,16 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/insert/insert_est.controller.php" method="post">
-                                        <label for="Est_Id">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
-                                        <label for="EName">Enter Establishment Name: </label>
-                                        <input type="text" id="EName" name="EName" /><br />
-                                        <label for="Address">Enter Establishment Address: </label>
-                                        <input type="text" id="Address" name="Address" /><br />
-                                        <label for="Waste_Pts">Enter Waste Pts: </label>
-                                        <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br />
-                                        <label for="Type">Enter Establishment Type: </label>
-                                        <input type="text" id="Type" name="Type" /><br />
+                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                        <label for="EName">Enter Establishment Name <mark>*</mark> : </label>
+                                        <input type="text" id="EName" name="EName" required /><br /><br />
+                                        <label for="Address">Enter Establishment Address <mark>*</mark> : </label>
+                                        <input type="text" id="Address" name="Address" required /><br /><br />
+                                        <label for="Waste_Pts">Enter Waste Pts : </label>
+                                        <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br /><br />
+                                        <label for="Type">Enter Establishment Type : </label>
+                                        <input type="text" id="Type" name="Type" /><br /><br />
                                         <button type="submit">ADD New Establishment</button>
                                     </form>
                                 </div>
@@ -104,18 +104,18 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/insert/insert_order.controller.php" method="post">
-                                        <label for="Order_Id">Enter Order ID: </label>
-                                        <input type="text" id="Order_Id" name="Order_Id" /><br />
-                                        <label for="Pts">Enter Points: </label>
-                                        <input type="number" id="Pts" name="Pts" /><br />
-                                        <label for="Date">Select Date: </label>
-                                        <input type="date" id="Date" name="Date" /><br />
-                                        <label for="Cust_Id">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
-                                        <label for="Item_Id">Enter Item ID: </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
-                                        <label for="Est_Id">Enter Establishment ID: </label>
-                                        <input type="number" id="Est_Id" name="Est_Id" /><br />
+                                        <label for="Order_Id">Enter Order ID <mark>*</mark> : </label>
+                                        <input type="text" id="Order_Id" name="Order_Id" required /><br /><br />
+                                        <label for="Pts">Enter Points : </label>
+                                        <input type="number" id="Pts" name="Pts" /><br /><br />
+                                        <label for="Date">Select Date <mark>*</mark> : </label>
+                                        <input type="date" id="Date" name="Date" required /><br /><br />
+                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                        <label for="Item_Id">Enter Item ID : </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" /><br /><br />
+                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                        <input type="number" id="Est_Id" name="Est_Id" required /><br /><br />
                                         <button type="submit">ADD New Order</button>
                                     </form>
                                 </div>
@@ -129,16 +129,16 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/insert/insert_item.controller.php" method="post">
-                                        <label for="Item_Id">Enter Item ID: </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
-                                        <label for="Category">Enter Category: </label>
-                                        <input type="text" id="Category" name="Category" /><br />
-                                        <label for="Pt_Val">Enter Points Value: </label>
-                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br />
-                                        <label for="IName">Enter Item Name: </label>
-                                        <input type="text" id="IName" name="IName" /><br />
-                                        <label for="Cust_Id">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id"/><br />
+                                        <label for="Item_Id">Enter Item ID <mark>*</mark> : </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" required /><br /><br />
+                                        <label for="Category">Enter Category : </label>
+                                        <input type="text" id="Category" name="Category" /><br /><br />
+                                        <label for="Pt_Val">Enter Points Value : </label>
+                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br /><br />
+                                        <label for="IName">Enter Item Name <mark>*</mark> : </label>
+                                        <input type="text" id="IName" name="IName" required /><br /><br />
+                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
                                         <button type="submit">ADD New Item</button>
                                     </form>
                                 </div>
@@ -152,10 +152,10 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/insert/insert_visits.controller.php" method="post">
-                                        <label for="Est_Id">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
-                                        <label for="Cust_Id">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
+                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
                                         <button type="submit">ADD New Order</button>
                                     </form>
                                 </div>
@@ -174,10 +174,10 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/update/update_customer.controller.php" method="post">
-                                        <label for="Cust_Id">Enter Customer ID: </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" /><br />
-                                        <label for="Cust_Pts">Enter Customer Pts: </label>
-                                        <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br />
+                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                        <label for="Cust_Pts">Enter Customer Pts : </label>
+                                        <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br /><br />
                                         <button type="submit">Update Customer Points</button>
                                     </form>
                                 </div>
@@ -191,12 +191,12 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/update/update_estAdmin.controller.php" method="post">
-                                        <label for="Admin_Id">Enter Admin ID: </label>
-                                        <input type="text" id="Admin_Id" name="Admin_Id" /><br />
-                                        <label for="Phone">Enter Admin Phone Number: </label>
-                                        <input type="text" id="Phone" name="Phone" /><br />
-                                        <label for="EAEmail">Enter Admin Email: </label>
-                                        <input type="text" id="EAEmail" name="EAEmail" /><br />
+                                        <label for="Admin_Id">Enter Admin ID <mark>*</mark> : </label>
+                                        <input type="text" id="Admin_Id" name="Admin_Id" required /><br /><br />
+                                        <label for="Phone">Enter Admin Phone Number : </label>
+                                        <input type="text" id="Phone" name="Phone" /><br /><br />
+                                        <label for="EAEmail">Enter Admin Email : </label>
+                                        <input type="text" id="EAEmail" name="EAEmail" /><br /><br />
                                         <button type="submit">Update Admin Info</button>
                                     </form>
                                 </div>
@@ -210,12 +210,12 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/update/update_est.controller.php" method="post">
-                                        <label for="Est_Id">Enter Establishment ID: </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" /><br />
-                                        <label for="Address">Enter Establishment Address: </label>
-                                        <input type="text" id="Address" name="Address" /><br />
-                                        <label for="Waste_Pts">Enter Waste Pts: </label>
-                                        <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br />
+                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                        <label for="Address">Enter Establishment Address : </label>
+                                        <input type="text" id="Address" name="Address" /><br /><br />
+                                        <label for="Waste_Pts">Enter Waste Pts : </label>
+                                        <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br /><br />
                                         <button type="submit">Update Establishment Info</button>
                                     </form>
                                 </div>
@@ -229,12 +229,12 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/update/update_order.controller.php" method="post">
-                                        <label for="Order_Id">Enter Order ID: </label>
-                                        <input type="text" id="Order_Id" name="Order_Id" /><br />
-                                        <label for="Pts">Enter Points: </label>
-                                        <input type="number" id="Pts" name="Pts" /><br />
-                                        <label for="Item_Id">Enter Item ID: </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
+                                        <label for="Order_Id">Enter Order ID <mark>*</mark> : </label>
+                                        <input type="text" id="Order_Id" name="Order_Id" required /><br /><br />
+                                        <label for="Pts">Enter Points : </label>
+                                        <input type="number" id="Pts" name="Pts" /><br /><br />
+                                        <label for="Item_Id">Enter Item ID : </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" /><br /><br />
                                         <button type="submit">Update Order</button>
                                     </form>
                                 </div>
@@ -248,10 +248,10 @@
                                         &times;
                                     </span>
                                     <form action="../src/controllers/update/update_item.controller.php" method="post">
-                                        <label for="Item_Id">Enter Item ID: </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" /><br />
-                                        <label for="Pt_Val">Enter Points Value: </label>
-                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br />
+                                        <label for="Item_Id">Enter Item ID <mark>*</mark> : </label>
+                                        <input type="text" id="Item_Id" name="Item_Id" required /><br /><br />
+                                        <label for="Pt_Val">Enter Points Value : </label>
+                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br /><br />
                                         <button type="submit">Update Item Info</button>
                                     </form>
                                 </div>
