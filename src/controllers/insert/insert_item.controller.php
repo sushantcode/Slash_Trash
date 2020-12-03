@@ -34,9 +34,15 @@
                 $stmt = $conn->prepare($query);  
                 $stmt->execute(array(':Cust_Id' => $Cust_Id, ':CName' => $CName, ':Cust_Pts' => $Cust_Pts, ':CEmail' => $CEmail, ':Age' => $Age));
                 $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
-                echo 'New record inserted successfully.';
+                if($stmt)
+                    echo 'New record inserted successfully.';
+                else
+                {
+                    echo "Unable to insert due to violation. Please check your input and the table."; 
+                }
             }
         }
         */
     }
+    echo '<p><a href="javascript:history.go(-1)" title="return">&laquo; Return to Slash-Trash Homepage</a></p>';    
 ?>

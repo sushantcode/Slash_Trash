@@ -76,6 +76,7 @@
 		Est_Id VARCHAR(7) NOT NULL,
 		PRIMARY KEY(Order_Id, Est_Id, Cust_Id),
 		FOREIGN KEY (Est_Id) REFERENCES establishment(Est_Id),
+		FOREIGN KEY (Item_Id) REFERENCES establishment(Item_Id),
 		FOREIGN KEY (Cust_Id) REFERENCES customer(Cust_Id) );";
 
 	$sql = $establishment.'
