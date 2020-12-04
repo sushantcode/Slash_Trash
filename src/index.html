@@ -14,7 +14,7 @@
                 <ul style="list-style-type: none;">
                     <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="about_btn">
                         ABOUT US 
-                    </button>
+                    </button><br /><br />
                     <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="howto_btn"> 
                         HOW TO USE SLASH-TRASH? 
                     </button>
@@ -29,238 +29,218 @@
                 </ul>
                 <div id="insert">
                     <h2>Adding New Data:</h2>
-                    <ul style="list-style-type: none;">
-                        <li style="margin-bottom: 10px;">
-                            <button id="cust_btn"> Insert Customer </button>
-                            <div id="cust_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="cust_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/insert/insert_customer.controller.php" method="post">
-                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
-                                        <label for="CName">Enter Customer Name <mark>*</mark> : </label>
-                                        <input type="text" id="CName" name="CName" required /><br /><br />
-                                        <label for="Cust_Pts">Enter Customer Pts : </label>
-                                        <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br /><br />
-                                        <label for="CEmail">Enter Customer Email <mark>*</mark> : </label>
-                                        <input type="text" id="CEmail" name="CEmail" required /><br /><br />
-                                        <label for="Age">Enter Customer Age (In Years) : </label>
-                                        <input type="number" id="Age" name="Age" /><br /><br />
-                                        <button type="submit">ADD New Customer</button>
-                                    </form>
-                                </div>
+                        <button id="cust_btn"> Insert Customer </button>
+                        <div id="cust_popup" class="popup">
+                            <div class="popup_content">
+                                <span class="cust_close">
+                                    &times;
+                                </span>
+                                <form action="../src/controllers/insert/insert_customer.controller.php" method="post">
+                                    <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                    <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                    <label for="CName">Enter Customer Name <mark>*</mark> : </label>
+                                    <input type="text" id="CName" name="CName" required /><br /><br />
+                                    <label for="Cust_Pts">Enter Customer Pts : </label>
+                                    <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br /><br />
+                                    <label for="CEmail">Enter Customer Email <mark>*</mark> : </label>
+                                    <input type="text" id="CEmail" name="CEmail" required /><br /><br />
+                                    <label for="Age">Enter Customer Age (In Years) : </label>
+                                    <input type="number" id="Age" name="Age" /><br /><br />
+                                    <button type="submit">ADD New Customer</button>
+                                </form>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 10px;"> 
-                            <button id="EA_btn"> Insert Establishment Admin </button>
-                            <div id="EA_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="EA_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/insert/insert_estAdmin.controller.php" method="post">
-                                        <label for="Admin_Id">Enter Admin ID <mark>*</mark> : </label>
-                                        <input type="text" id="Admin_Id" name="Admin_Id" required /><br /><br />
-                                        <label for="EAName">Enter Admin Name <mark>*</mark> : </label>
-                                        <input type="text" id="EAName" name="EAName" required /><br /><br />
-                                        <label for="Phone">Enter Admin Phone Number : </label>
-                                        <input type="text" id="Phone" name="Phone" /><br /><br />
-                                        <label for="EAEmail">Enter Admin Email : </label>
-                                        <input type="text" id="EAEmail" name="EAEmail" /><br /><br />
-                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
-                                        <button type="submit">ADD New Admin</button>
-                                    </form>
-                                </div>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="EA_btn"> Insert Establishment Admin </button>
+                        <div id="EA_popup" class="popup">
+                            <div class="popup_content">
+                                <span class="EA_close">
+                                    &times;
+                                </span>
+                                <form action="../src/controllers/insert/insert_estAdmin.controller.php" method="post">
+                                    <label for="Admin_Id">Enter Admin ID <mark>*</mark> : </label>
+                                    <input type="text" id="Admin_Id" name="Admin_Id" required /><br /><br />
+                                    <label for="EAName">Enter Admin Name <mark>*</mark> : </label>
+                                    <input type="text" id="EAName" name="EAName" required /><br /><br />
+                                    <label for="Phone">Enter Admin Phone Number : </label>
+                                    <input type="text" id="Phone" name="Phone" /><br /><br />
+                                    <label for="EAEmail">Enter Admin Email : </label>
+                                    <input type="text" id="EAEmail" name="EAEmail" /><br /><br />
+                                    <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                    <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                    <button type="submit">ADD New Admin</button>
+                                </form>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                        <button id="Est_btn"> Insert New Establishment </button>
-                            <div id="Est_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="Est_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/insert/insert_est.controller.php" method="post">
-                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
-                                        <label for="EName">Enter Establishment Name <mark>*</mark> : </label>
-                                        <input type="text" id="EName" name="EName" required /><br /><br />
-                                        <label for="Address">Enter Establishment Address <mark>*</mark> : </label>
-                                        <input type="text" id="Address" name="Address" required /><br /><br />
-                                        <label for="Waste_Pts">Enter Waste Pts : </label>
-                                        <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br /><br />
-                                        <label for="Type">Enter Establishment Type : </label>
-                                        <input type="text" id="Type" name="Type" /><br /><br />
-                                        <button type="submit">ADD New Establishment</button>
-                                    </form>
-                                </div>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="Est_btn"> Insert New Establishment </button>
+                        <div id="Est_popup" class="popup">
+                            <div class="popup_content">
+                                <span class="Est_close">
+                                    &times;
+                                </span>
+                                <form action="../src/controllers/insert/insert_est.controller.php" method="post">
+                                    <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                    <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                    <label for="EName">Enter Establishment Name <mark>*</mark> : </label>
+                                    <input type="text" id="EName" name="EName" required /><br /><br />
+                                    <label for="Address">Enter Establishment Address <mark>*</mark> : </label>
+                                    <input type="text" id="Address" name="Address" required /><br /><br />
+                                    <label for="Waste_Pts">Enter Waste Pts : </label>
+                                    <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br /><br />
+                                    <label for="Type">Enter Establishment Type : </label>
+                                    <input type="text" id="Type" name="Type" /><br /><br />
+                                    <button type="submit">ADD New Establishment</button>
+                                </form>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <button id="order_btn"> Insert New Order </button>
-                            <div id="order_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="order_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/insert/insert_order.controller.php" method="post">
-                                        <label for="Order_Id">Enter Order ID <mark>*</mark> : </label>
-                                        <input type="text" id="Order_Id" name="Order_Id" required /><br /><br />
-                                        <label for="Pts">Enter Points : </label>
-                                        <input type="number" id="Pts" name="Pts" /><br /><br />
-                                        <label for="Date">Select Date <mark>*</mark> : </label>
-                                        <input type="date" id="Date" name="Date" required /><br /><br />
-                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
-                                        <label for="Item_Id">Enter Item ID : </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" /><br /><br />
-                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
-                                        <input type="number" id="Est_Id" name="Est_Id" required /><br /><br />
-                                        <button type="submit">ADD New Order</button>
-                                    </form>
-                                </div>
+                        </div><br /><br />
+                        <button id="order_btn"> Insert New Order </button>
+                        <div id="order_popup" class="popup">
+                            <div class="popup_content">
+                                <span class="order_close">
+                                    &times;
+                                </span>
+                                <form action="../src/controllers/insert/insert_order.controller.php" method="post">
+                                    <label for="Order_Id">Enter Order ID <mark>*</mark> : </label>
+                                    <input type="text" id="Order_Id" name="Order_Id" required /><br /><br />
+                                    <label for="Pts">Enter Points : </label>
+                                    <input type="number" id="Pts" name="Pts" /><br /><br />
+                                    <label for="Date">Select Date <mark>*</mark> : </label>
+                                    <input type="date" id="Date" name="Date" required /><br /><br />
+                                    <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                    <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                    <label for="Item_Id">Enter Item ID : </label>
+                                    <input type="text" id="Item_Id" name="Item_Id" /><br /><br />
+                                    <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                    <input type="number" id="Est_Id" name="Est_Id" required /><br /><br />
+                                    <button type="submit">ADD New Order</button>
+                                </form>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <button id="item_btn"> Insert Reusable Item </button>
-                            <div id="item_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="item_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/insert/insert_item.controller.php" method="post">
-                                        <label for="Item_Id">Enter Item ID <mark>*</mark> : </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" required /><br /><br />
-                                        <label for="Category">Enter Category : </label>
-                                        <input type="text" id="Category" name="Category" /><br /><br />
-                                        <label for="Pt_Val">Enter Points Value : </label>
-                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br /><br />
-                                        <label for="IName">Enter Item Name <mark>*</mark> : </label>
-                                        <input type="text" id="IName" name="IName" required /><br /><br />
-                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
-                                        <button type="submit">ADD New Item</button>
-                                    </form>
-                                </div>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="item_btn"> Insert Reusable Item </button>
+                        <div id="item_popup" class="popup">
+                            <div class="popup_content">
+                                <span class="item_close">
+                                    &times;
+                                </span>
+                                <form action="../src/controllers/insert/insert_item.controller.php" method="post">
+                                    <label for="Item_Id">Enter Item ID <mark>*</mark> : </label>
+                                    <input type="text" id="Item_Id" name="Item_Id" required /><br /><br />
+                                    <label for="Category">Enter Category : </label>
+                                    <input type="text" id="Category" name="Category" /><br /><br />
+                                    <label for="Pt_Val">Enter Points Value : </label>
+                                    <input type="number" id="Pt_Val" name="Pt_Val" /><br /><br />
+                                    <label for="IName">Enter Item Name <mark>*</mark> : </label>
+                                    <input type="text" id="IName" name="IName" required /><br /><br />
+                                    <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                    <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                    <button type="submit">ADD New Item</button>
+                                </form>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <button id="visit_btn"> Insert New Visits </button>
-                            <div id="visit_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="visit_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/insert/insert_visits.controller.php" method="post">
-                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
-                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
-                                        <button type="submit">ADD New Order</button>
-                                    </form>
-                                </div>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="visit_btn"> Insert New Visits </button>
+                        <div id="visit_popup" class="popup">
+                            <div class="popup_content">
+                                <span class="visit_close">
+                                    &times;
+                                </span>
+                                <form action="../src/controllers/insert/insert_visits.controller.php" method="post">
+                                    <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                    <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                    <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                    <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                    <button type="submit">ADD New Order</button>
+                                </form>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
                 </div><br /><br />
                 <div id="update">
                     <h2>Update Data:</h2>
-                    <ul style="list-style-type: none;">
-                        <li style="margin-bottom: 10px;">
-                            <button id="update_cust_btn"> Update Customer Points</button>
-                            <div id="update_cust_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="update_cust_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/update/update_customer.controller.php" method="post">
-                                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
-                                        <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
-                                        <label for="Cust_Pts">Enter Customer Pts : </label>
-                                        <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br /><br />
-                                        <button type="submit">Update Customer Points</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <li style="margin-bottom: 10px;"> 
-                            <button id="update_EA_btn"> Update Establishment Admin Information </button>
-                            <div id="update_EA_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="update_EA_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/update/update_estAdmin.controller.php" method="post">
-                                        <label for="Admin_Id">Enter Admin ID <mark>*</mark> : </label>
-                                        <input type="text" id="Admin_Id" name="Admin_Id" required /><br /><br />
-                                        <label for="Phone">Enter Admin Phone Number : </label>
-                                        <input type="text" id="Phone" name="Phone" /><br /><br />
-                                        <label for="EAEmail">Enter Admin Email : </label>
-                                        <input type="text" id="EAEmail" name="EAEmail" /><br /><br />
-                                        <button type="submit">Update Admin Info</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                        <button id="update_Est_btn"> Update Establishment Information</button>
-                            <div id="update_Est_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="update_Est_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/update/update_est.controller.php" method="post">
-                                        <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
-                                        <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
-                                        <label for="Address">Enter Establishment Address : </label>
-                                        <input type="text" id="Address" name="Address" /><br /><br />
-                                        <label for="Waste_Pts">Enter Waste Pts : </label>
-                                        <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br /><br />
-                                        <button type="submit">Update Establishment Info</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <button id="update_order_btn"> Update Order Information</button>
-                            <div id="update_order_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="update_order_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/update/update_order.controller.php" method="post">
-                                        <label for="Order_Id">Enter Order ID <mark>*</mark> : </label>
-                                        <input type="text" id="Order_Id" name="Order_Id" required /><br /><br />
-                                        <label for="Pts">Enter Points : </label>
-                                        <input type="number" id="Pts" name="Pts" /><br /><br />
-                                        <label for="Item_Id">Enter Item ID : </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" /><br /><br />
-                                        <button type="submit">Update Order</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <button id="update_item_btn"> Update Reusable Item Information</button>
-                            <div id="update_item_popup" class="popup">
-                                <div class="popup_content">
-                                    <span class="update_item_close">
-                                        &times;
-                                    </span>
-                                    <form action="../src/controllers/update/update_item.controller.php" method="post">
-                                        <label for="Item_Id">Enter Item ID <mark>*</mark> : </label>
-                                        <input type="text" id="Item_Id" name="Item_Id" required /><br /><br />
-                                        <label for="Pt_Val">Enter Points Value : </label>
-                                        <input type="number" id="Pt_Val" name="Pt_Val" /><br /><br />
-                                        <button type="submit">Update Item Info</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <button id="update_cust_btn"> Update Customer Points</button>
+                    <div id="update_cust_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="update_cust_close">
+                                &times;
+                            </span>
+                            <form action="../src/controllers/update/update_customer.controller.php" method="post">
+                                <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                                <input type="text" id="Cust_Id" name="Cust_Id" required /><br /><br />
+                                <label for="Cust_Pts">Enter Customer Pts : </label>
+                                <input type="number" id="Cust_Pts" name="Cust_Pts" value="0" /><br /><br />
+                                <button type="submit">Update Customer Points</button>
+                            </form>
+                        </div>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="update_EA_btn"> Update Establishment Admin Information </button>
+                    <div id="update_EA_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="update_EA_close">
+                                &times;
+                            </span>
+                            <form action="../src/controllers/update/update_estAdmin.controller.php" method="post">
+                                <label for="Admin_Id">Enter Admin ID <mark>*</mark> : </label>
+                                <input type="text" id="Admin_Id" name="Admin_Id" required /><br /><br />
+                                <label for="Phone">Enter Admin Phone Number : </label>
+                                <input type="text" id="Phone" name="Phone" /><br /><br />
+                                <label for="EAEmail">Enter Admin Email : </label>
+                                <input type="text" id="EAEmail" name="EAEmail" /><br /><br />
+                                <button type="submit">Update Admin Info</button>
+                            </form>
+                        </div>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="update_Est_btn"> Update Establishment Information</button>
+                    <div id="update_Est_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="update_Est_close">
+                                &times;
+                            </span>
+                            <form action="../src/controllers/update/update_est.controller.php" method="post">
+                                <label for="Est_Id">Enter Establishment ID <mark>*</mark> : </label>
+                                <input type="text" id="Est_Id" name="Est_Id" required /><br /><br />
+                                <label for="Address">Enter Establishment Address : </label>
+                                <input type="text" id="Address" name="Address" /><br /><br />
+                                <label for="Waste_Pts">Enter Waste Pts : </label>
+                                <input type="number" id="Waste_Pts" name="Waste_Pts" value="0" /><br /><br />
+                                <button type="submit">Update Establishment Info</button>
+                            </form>
+                        </div>
+                    </div><br /><br />
+                    <button id="update_order_btn"> Update Order Information</button>
+                    <div id="update_order_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="update_order_close">
+                                &times;
+                            </span>
+                            <form action="../src/controllers/update/update_order.controller.php" method="post">
+                                <label for="Order_Id">Enter Order ID <mark>*</mark> : </label>
+                                <input type="text" id="Order_Id" name="Order_Id" required /><br /><br />
+                                <label for="Pts">Enter Points : </label>
+                                <input type="number" id="Pts" name="Pts" /><br /><br />
+                                <label for="Item_Id">Enter Item ID : </label>
+                                <input type="text" id="Item_Id" name="Item_Id" /><br /><br />
+                                <button type="submit">Update Order</button>
+                            </form>
+                        </div>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="update_item_btn"> Update Reusable Item Information</button>
+                    <div id="update_item_popup" class="popup">
+                        <div class="popup_content">
+                            <span class="update_item_close">
+                                &times;
+                            </span>
+                            <form action="../src/controllers/update/update_item.controller.php" method="post">
+                                <label for="Item_Id">Enter Item ID <mark>*</mark> : </label>
+                                <input type="text" id="Item_Id" name="Item_Id" required /><br /><br />
+                                <label for="Pt_Val">Enter Points Value : </label>
+                                <input type="number" id="Pt_Val" name="Pt_Val" /><br /><br />
+                                <button type="submit">Update Item Info</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="view2">
+                    <h2>Update points of customers visiting this Establishment?:</h2>
+                    <form action="../src/controllers/views_handlers/view2.controller.php" method="post">
+                        <button type="submit">Update</button>
+                    </form>
                 </div>
             </div>
             <div class="split right">
@@ -306,14 +286,14 @@
                     </form>
                 </div><br />
                 <div id="view1">
-                    <h2>How much customers saved?:</h2>
+                    <h2>How much this customer gained?:</h2>
                     <form action="../src/controllers/views_handlers/view1.controller.php" method="post">
                         <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
                         <input type="text" id="Cust_Id" name="Cust_Id" /><br /><br />
-                        <label for="Date">From Date <mark>*</mark> : </label>&nbsp;&nbsp;
-                        <input type="date" id="from_date" name="Date" />
-                        <label for="Date">To: <mark>*</mark> : </label>
-                        <input type="date" id="to_date" name="Date"  /><br /><br />
+                        <label for="Date">From Date <mark>*</mark> : </label>&nbsp;
+                        <input type="date" id="from_date" name="from_date" />&nbsp;&nbsp;&nbsp;
+                        <label for="Date">To: <mark>*</mark> : </label>&nbsp;
+                        <input type="date" id="to_date" name="to_date" /><br /><br />
                         <button type="submit">View</button>
                     </form>
                 </div>

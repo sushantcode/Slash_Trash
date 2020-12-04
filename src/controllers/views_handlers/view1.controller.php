@@ -14,15 +14,25 @@
         
         $query = "SELECT DISTINCT Cust_Id, CName, SUM(Pts)
                 FROM TRANSACTION_INFO
-                WHERE Cust_Id = ".$cust_id." AND Trans_Date >= ".$start." AND Trans_Date <= ".$end."
+                WHERE Cust_Id = \"".$cust_id."\" AND Trans_Date >= \"".$start."\" AND Trans_Date <= \"".$end."\"
                 GROUP BY Cust_Id;";
-            
-        //echo "<br>".$query."<br>";
-        
-        if($result = $conn->query($query))
+        $result = $conn->query($query);
+        if ($result)
         {
-            echo "Customer ".$result["CName"]."(".$result["Cust_Id"].") have saved ".$result["SUM(Pts)"].
-            "between ".$start." and ".$end;
+            $data = $result->fetch(PDO::FETCH_NUM);
+            if($data)
+            {
+                echo "<Br /><b>";
+                echo "Customer, ".$data[1]."(".$data[0].") have gained ".$data[2].
+                " points between ".$start." and ".$end;
+                echo "</b>";
+            }
+            else
+            {
+                echo "<Br /><b>";
+                echo "Customer with ID ".$cust_id." made no transaction between ".$start." and ".$end;
+                echo "</b>";
+            }
         }
         else
         {

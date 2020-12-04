@@ -10,13 +10,10 @@ h1 {
 }
 
 mark {
-  background-color: cornsilk;
+  background-color: transparent;
   color: red;
 }
 
-#Date>mark {
-    background-color: rgb(176, 192, 103);
-}
 
 .split {
   height: 100%;
@@ -29,7 +26,7 @@ mark {
 
   .logo {
     border-left-width: 10px;
-    float: right;
+    float: center;
     padding-top: 50px;
   }
 
