@@ -1,10 +1,6 @@
 <?php
-	$host = "localhost:3306";
-	$dbusername = "root";
-	$dbpassword = "";
-
+    require_once 'connect_database.php';
 	try {
-		$conn = new PDO('mysql:host='.$host, $dbusername, $dbpassword);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$sql = "CREATE DATABASE SLASHTRASH";
 		// use exec() because no results are returned
@@ -23,26 +19,26 @@
     //create tables:
     
     $establishment = "CREATE TABLE 
-		Establishment (
+		ESTABLISHMENT (
 		Est_Id VARCHAR(7) NOT NULL, 
 		EName VARCHAR(50) NOT NULL, 
-		Address VARCHAR(80) NOT NULL,
+		Est_Address VARCHAR(80) NOT NULL,
 		Waste_Pts INT, 
 		Type VARCHAR(30),
 		PRIMARY KEY(Est_Id));";
 
 	$establishment_admin = "CREATE TABLE 
-		Establishment_Admin (
+		ESTABLISHMENT_ADMIN (
 		Admin_Id VARCHAR(7) NOT NULL, 
 		EAName VARCHAR(50) NOT NULL,
 		Phone VARCHAR(20),
 		EAEmail VARCHAR(50), 
 		Est_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY(Admin_Id, Est_Id),
-		FOREIGN KEY (Est_Id) REFERENCES Establishment(Est_Id) );";
+		FOREIGN KEY (Est_Id) REFERENCES ESTABLISHMENT(Est_Id) );";
 
 	$customer = "CREATE TABLE 
-		Customer (Cust_Id VARCHAR(7) NOT NULL, 
+		CUSTOMER (Cust_Id VARCHAR(7) NOT NULL, 
 		CName VARCHAR(50) NOT NULL, 
 		Cust_Pts INT, 
 		CEmail VARCHAR(50) NOT NULL,
@@ -50,24 +46,24 @@
 		PRIMARY KEY(Cust_Id));";
 
 	$visits = "CREATE TABLE 
-		visits (Est_Id VARCHAR(7) NOT NULL, 
+		VISITS (Est_Id VARCHAR(7) NOT NULL, 
 		Cust_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY (Est_Id, Cust_Id), 
-		FOREIGN KEY (Est_Id) REFERENCES Establishment(Est_Id), 
-		FOREIGN KEY (Cust_Id) REFERENCES Customer(Cust_Id));";
+		FOREIGN KEY (Est_Id) REFERENCES ESTABLISHMENT(Est_Id), 
+		FOREIGN KEY (Cust_Id) REFERENCES CUSTOMER(Cust_Id));";
 
 	$item = "CREATE TABLE 
-		Reusable_Item (
+		REUSABLE_ITEM (
 		Item_Id VARCHAR(9) NOT NULL, 
 		Category VARCHAR(20),
 		Pt_Val INT, 
 		IName VARCHAR(50) NOT NULL,
 		Cust_Id VARCHAR(7) NOT NULL, 
 		PRIMARY KEY(Item_Id, Cust_Id),
-		FOREIGN KEY (Cust_Id) REFERENCES Customer(Cust_Id) );";
+		FOREIGN KEY (Cust_Id) REFERENCES CUSTOMER(Cust_Id) );";
 
 	$order = "CREATE TABLE 
-		Orders (
+		ORDERS (
 		Order_Id VARCHAR(10) NOT NULL,
 		Pts INT,
 		Trans_Date DATE NOT NULL,
@@ -75,8 +71,8 @@
 		Item_Id VARCHAR(9), 
 		Est_Id VARCHAR(7) NOT NULL,
 		PRIMARY KEY(Order_Id, Est_Id, Cust_Id),
-		FOREIGN KEY (Est_Id) REFERENCES Establishment(Est_Id),
-		FOREIGN KEY (Cust_Id) REFERENCES Customer(Cust_Id) );";
+		FOREIGN KEY (Est_Id) REFERENCES ESTABLISHMENT(Est_Id),
+		FOREIGN KEY (Cust_Id) REFERENCES CUSTOMER(Cust_Id) );";
 
     $sql = $establishment;
     $sql .= $establishment_admin;
@@ -131,7 +127,7 @@
 	{
 		$firstline = TRUE;
 
-		if (($fileread = fopen("../Data/".$filenames[$i].".csv", "r")) == TRUE)
+		if (($fileread = fopen("../../Data/".$filenames[$i].".csv", "r")) == TRUE)
 		{
 			while (($data = fgetcsv($fileread, 1000, ",")) == TRUE) 
 			{
@@ -159,7 +155,7 @@
 					}
 				}
 
-				$insert_query = "INSERT INTO ".$filenames[$i]." VALUES (".$values.");";
+				$insert_query = "INSERT INTO ".strtoupper($filenames[$i])." VALUES (".$values.");";
 				$final_query .= $insert_query;
 				echo $insert_query."<br>";
 			}
