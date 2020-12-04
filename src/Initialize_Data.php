@@ -1,4 +1,0 @@
-<?php
-	$query = "CREATE TABLE ";
-
-?>
