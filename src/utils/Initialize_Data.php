@@ -1,7 +1,11 @@
 <?php
-    require_once 'connect_database.php';
+    $host = "localhost:3306";
+	$dbusername = "root";
+    $dbpassword = "";
+    
 	try {
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = new PDO('mysql:host='.$host, $dbusername, $dbpassword);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$sql = "CREATE DATABASE SLASHTRASH";
 		// use exec() because no results are returned
 		$conn->exec("DROP DATABASE IF EXISTS SLASHTRASH");	
@@ -167,7 +171,18 @@
   		echo "<br> Tables are filled";
 	} else {
   		echo "Error: " . $final_query . "<br>" . $conn->error;
-	}
+    }
+    
+    $custom_view = "CREATE VIEW TRANSACTION_INFO(Cust_Id, CName, Est_Id, EName, Order_Id, Pts, Trans_Date, Item_Id, IName)
+        AS SELECT   C.Cust_Id, C.CName, E.Est_Id, E.EName, O.Order_Id, O.Pts, O.Trans_Date, I.Item_Id, I.IName
+        FROM CUSTOMER AS C, ESTABLISHMENT AS E, ORDERS AS O, REUSABLE_ITEM AS I
+        WHERE C.Cust_Id = O.Cust_Id AND I.Item_Id = O.Item_Id AND E.Est_Id = O.Est_Id;";
+
+    if ($conn->query($custom_view) == TRUE) {
+        echo "<br> TRANSACTION_INFO VIEW is successfully created.";
+    } else {
+        echo "Error: " . $final_query . "<br>" . $conn->error;
+    }
 
 	$conn = NULL;
 ?>

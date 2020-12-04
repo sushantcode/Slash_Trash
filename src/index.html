@@ -15,6 +15,9 @@
                     <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="about_btn">
                         ABOUT US 
                     </button>
+                    <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="howto_btn"> 
+                        HOW TO USE SLASH-TRASH? 
+                    </button>
                     <div id="about_popup" class="popup">
                         <div class="popup_content">
                             <span class="about_close">
@@ -262,9 +265,6 @@
             </div>
             <div class="split right">
                 <ul style="list-style-type: none;">
-                    <button style="background-color: darkslategray; color: aliceblue; font-size: 20px; width: 50%;" id="howto_btn"> 
-                        HOW TO USE SLASH-TRASH? 
-                    </button>
                     <div id="howto_popup" class="popup">
                         <div class="popup_content">
                             <span class="howto_close">
@@ -285,10 +285,10 @@
                             <option value="Orders">Orders</option>
                             <option value="Reusable_Item">Reusable_Item</option>
                             <option value="visits">Visits</option>
-                        </select><br /><br />
+                        </select>&nbsp;&nbsp;&nbsp;
                         <button type="submit">Display Data</button>
                     </form>
-                </div><br /><br />
+                </div><br />
                 <div id="delete">
                     <h2>Delete Data from Table:</h2>
                     <form action="../src/controllers/delete.controller.php" method="post">
@@ -299,10 +299,22 @@
                             <option value="Establishment">Establishment</option>
                             <option value="Orders">Orders</option>
                             <option value="Reusable_Item">Reusable_Item</option>
-                        </select><br /><br />
+                        </select>&nbsp;&nbsp;&nbsp;
                         <label for="input_id">Enter ID: </label>
                         <input type="text" id="input_id" name="input_id" /><br /><br />
                         <button type="submit">Delete</button>
+                    </form>
+                </div><br />
+                <div id="view1">
+                    <h2>How much customers saved?:</h2>
+                    <form action="../src/controllers/views_handlers/view1.controller.php" method="post">
+                        <label for="Cust_Id">Enter Customer ID <mark>*</mark> : </label>
+                        <input type="text" id="Cust_Id" name="Cust_Id" /><br /><br />
+                        <label for="Date">From Date <mark>*</mark> : </label>&nbsp;&nbsp;
+                        <input type="date" id="from_date" name="Date" />
+                        <label for="Date">To: <mark>*</mark> : </label>
+                        <input type="date" id="to_date" name="Date"  /><br /><br />
+                        <button type="submit">View</button>
                     </form>
                 </div>
                 <img class="logo" src="Slash_Trash_Logo.png">

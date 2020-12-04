@@ -14,6 +14,10 @@ mark {
   color: red;
 }
 
+#Date>mark {
+    background-color: rgb(176, 192, 103);
+}
+
 .split {
   height: 100%;
   width: 50%;
@@ -26,7 +30,7 @@ mark {
   .logo {
     border-left-width: 10px;
     float: right;
-    padding-top: 150px;
+    padding-top: 50px;
   }
 
   .left {
