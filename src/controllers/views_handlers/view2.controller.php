@@ -8,17 +8,17 @@
     }
     else 
     {
-        $query = "UPDATE TRANSACTION_INFO AS T1
-            SET T1.Cust_Pts = T2.Total_Pts
-            FROM (SELECT SUM(Pts) AS Total_Pts, Cust_Id
-                    FROM TRANSACTION_INFO
-                    GROUP BY Cust_Id) AS T2
-            WHERE T1.Cust_Id = T2.Cust_Id;";
+        $est_id = filter_input(INPUT_POST, 'Est_Id');
+        $visit_date = filter_input(INPUT_POST, 'visit_date');
+        $points = filter_input(INPUT_POST, 'points');
+
+        $query = "UPDATE TRANSACTION_INFO SET Cust_Pts = Cust_Pts + ".$points." WHERE Trans_Date = \"".$visit_date."\" AND Est_Id = \"".$est_id."\";";
+
         $result = $conn->query($query);
         if ($result)
         {
             echo "<Br /><b>";
-            echo "Customer points have been updated successfully for all orders that have been made recently.";
+            echo "Customer points have been updated successfully.";
             echo "</b>";
         }
         else

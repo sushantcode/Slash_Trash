@@ -8,12 +8,13 @@
     }
     else 
     {
-        // Change to Establishment Admin values
-        /*
-        $Cust_Id = filter_input(INPUT_POST, 'Cust_Id');
-        $Cust_Pts = filter_input(INPUT_POST, 'Cust_Pts');
+        // Change to Establishment values
 
-        if($query = "UPDATE customer SET Cust_Pts = :Cust_Pts WHERE Cust_Id = :Cust_Id")
+        $Admin_Id = filter_input(INPUT_POST, 'Admin_Id');
+        $Phone = filter_input(INPUT_POST, 'Phone');
+        $Waste_Pts = filter_input(INPUT_POST, 'Waste_Pts');
+
+        if($query = "UPDATE ESTABLISHMENT_ADMIN SET Phone = :Phone, Waste_Pts = :Waste_Pts WHERE Admin_Id = :Admin_Id")
         {    
             if($query==null)
             {      
@@ -23,7 +24,7 @@
             else
             {
                 $stmt = $conn->prepare($query);  
-                $stmt->execute(array(':Cust_Id' => $Cust_Id, ':Cust_Pts' => $Cust_Pts));
+                $stmt->execute(array(':Admin_Id' => $Admin_Id, ':Phone' => $Phone, ':Waste_Pts' => $Waste_Pts));
                 $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
                 if($stmt)
                     echo 'Record updated successfully.';
@@ -33,7 +34,7 @@
                 }
             }
         }
-        */
+
     }
     echo '<p><a href="javascript:history.go(-1)" title="return">&laquo; Return to Slash-Trash Homepage</a></p>';    
 ?>
