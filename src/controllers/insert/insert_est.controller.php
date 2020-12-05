@@ -16,7 +16,7 @@
         $Est_Address = filter_input(INPUT_POST, 'Address');
         $Type = filter_input(INPUT_POST, 'Type');
 
-        if($query = "INSERT INTO ESTABLISHMENT(Est_Id, EName, Waste_Pts, Est_Address, Type) VALUES (:Est_Id, :EName, :Waste_Pts, :Est_Address, :Type)")
+        if($query = "INSERT INTO ESTABLISHMENT(Est_Id, EName, Est_Address, Waste_Pts, Type) VALUES (:Est_Id, :EName, :Est_Address, :Waste_Pts, :Type)")
         {    
             if($query==null)
             {      
@@ -26,7 +26,7 @@
             else
             {
                 $stmt = $conn->prepare($query);  
-                $stmt->execute(array(':Est_Id' => $Est_Id, ':EName' => $EName, ':Waste_Pts' => $Waste_Pts, ':Address' => $Address, ':Type' => $Type));
+                $stmt->execute(array(':Est_Id' => $Est_Id, ':EName' => $EName, ':Est_Address' => $Est_Address, ':Waste_Pts' => $Waste_Pts, ':Type' => $Type));
                 $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
                 if($stmt)
                     echo 'New record inserted successfully.';

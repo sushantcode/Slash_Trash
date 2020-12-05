@@ -12,9 +12,9 @@
 
         $Admin_Id = filter_input(INPUT_POST, 'Admin_Id');
         $Phone = filter_input(INPUT_POST, 'Phone');
-        $Waste_Pts = filter_input(INPUT_POST, 'Waste_Pts');
+        $EAEmail = filter_input(INPUT_POST, 'EAEmail');
 
-        if($query = "UPDATE ESTABLISHMENT_ADMIN SET Phone = :Phone, Waste_Pts = :Waste_Pts WHERE Admin_Id = :Admin_Id")
+        if($query = "UPDATE ESTABLISHMENT_ADMIN SET Phone = :Phone, EAEmail = :EAEmail WHERE Admin_Id = :Admin_Id")
         {    
             if($query==null)
             {      
@@ -24,7 +24,7 @@
             else
             {
                 $stmt = $conn->prepare($query);  
-                $stmt->execute(array(':Admin_Id' => $Admin_Id, ':Phone' => $Phone, ':Waste_Pts' => $Waste_Pts));
+                $stmt->execute(array(':Admin_Id' => $Admin_Id, ':Phone' => $Phone, ':EAEmail' => $EAEmail));
                 $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
                 if($stmt)
                     echo 'Record updated successfully.';
