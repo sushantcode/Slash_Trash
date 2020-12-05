@@ -25,7 +25,7 @@
             else
             {
                 $stmt = $conn->prepare($query);  
-                $stmt->execute(array(':Admin_Id' => $Admin_Id, ':EAName' => $EAName, ':Est_Id' => $Est_Id, ':EAEmail' => $EAEmail, ':Phone' => $Phone));
+                $stmt->execute(array(':Admin_Id' => $Admin_Id, ':EAName' => $EAName, ':Phone' => $Phone, ':EAEmail' => $EAEmail, ':Est_Id' => $Est_Id));
                 $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
                 if($stmt)
                     echo 'New record inserted successfully.';
