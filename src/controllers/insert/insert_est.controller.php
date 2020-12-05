@@ -22,7 +22,7 @@
             {      
                 echo "Unable to insert due to violation.";      
                 die();    
-            }    
+            }
             else
             {
                 $stmt = $conn->prepare($query);  
